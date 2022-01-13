@@ -1,4 +1,4 @@
-const levelName = document.querySelector("label.input")
+const levelName = document.querySelector(".levelName")
 const addButton = document.querySelector(".addButton")
 
 

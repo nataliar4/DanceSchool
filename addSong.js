@@ -1,10 +1,14 @@
-const danceName = document.querySelector(".danceGenreName")
+const title = document.querySelector(".title")
+const source = document.querySelector(".source")
+const performer = document.querySelector(".performer")
 const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(danceName.value)
-  fetch("http://localhost:3000/admin/danceGenre", {
+  console.log(title.value)
+  console.log(source.value)
+  console.log(performer.value)
+  fetch("http://localhost:3000/admin/song", {
     method:"POST",
     mode:"cors",
     credentials:"include",
@@ -13,7 +17,9 @@ addButton.addEventListener("click", ()=>{
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body:JSON.stringify({
-      name: danceName.value,
+      title: title.value, 
+      capacity: capacity.value,
+      performerName: performer
     })
   }).then(response => response.json()).then(data => console.log(data))
   // loginSubmit.innerText="Log In"

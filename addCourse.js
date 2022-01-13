@@ -3,7 +3,7 @@ const price = document.querySelector(".price")
 const numberOfClasses = document.querySelector(".numberOfClasses")
 const startTime = document.querySelector(".startTime")
 const requirements = document.querySelector(".requirements")
-const rommName = document.querySelector(".roomName")
+const roomName = document.querySelector(".roomName")
 const songTitle = document.querySelector(".songTitle")
 const levelName = document.querySelector(".levelName")
 const danceGenreName = document.querySelector(".danceGenreName")
@@ -20,7 +20,7 @@ addButton.addEventListener("click", ()=>{
   console.log(songTitle.value)
   console.log(levelName.value)
   console.log(danceGenreName.value)  
-  fetch("http://localhost:3000/instructor/instructor/course", {
+  fetch("http://localhost:3000/instructor/course", {
     method:"POST",
     mode:"cors",
     credentials:"include",
@@ -34,7 +34,7 @@ addButton.addEventListener("click", ()=>{
       numberClasses: numberOfClasses.value,
       startTime: startTime.value,
       requirements: requirements.value,
-      roomName: rommName.value,
+      roomName: roomName.value,
       songTitle: songTitle.value,
       levelName: levelName.value,
       danceGenreName: danceGenreName.value
