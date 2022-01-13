@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Szkoła Tańca Bailando</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+
   </head>
   <body>
     <div class="header">
@@ -11,20 +12,20 @@
       <img src="logo.png">
 <!-- Panel logowania -->
       <div class="LogIn">
-        <input type="text" placeholder="Nazwa użytkownika" name="username" required>  
-        <input type="password" placeholder="Hasło" name="password" required>
-        <button type="submit">Zaloguj</button>
+        <input class="loginUsername" type="text" placeholder="Username" name="username" required>  
+        <input class="loginPassword" type="password" placeholder="Password" name="password" required>
+        <button class="loginSubmit" type="submit">Log In</button>
       </div>
     </div>
 
 <!-- menu rozwijane -->
     <div>
       <ol>
-        <li><a href="C:\Users\Natalka\Documents\pp\SQL\DanceSchool\main.html">Strona główna</a></li>
+        <li><a href="main.html">Main paige</a></li>
 
-        <li><a href="C:\Users\Natalka\Documents\pp\SQL\DanceSchool\planZajex.html">Plan zajęć</a></li>
-
-        <li><a href="C:\Users\Natalka\Documents\pp\SQL\DanceSchool\kursy.html">Kursy</a>
+        <li><a href="instructors.html">Instructors</a></li>
+      
+        <li><a href="courses.html">Courses</a>
           <!-- <ul>
             <li><a href="#">link - 1</a></li>
             <li><a href="#">link - 2</a></li>
@@ -48,7 +49,7 @@
       </div>
     </div>
 
-
+    <script src="login.js"></script>
   </body>
 
 </html>

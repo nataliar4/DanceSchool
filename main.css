@@ -14,7 +14,7 @@ body {
   /* float: right; */
   margin: auto 3vw 0 auto;
 }
-button {
+.loginSubmit {
   background-color: #F9A03F;
   padding: 5px 10px;
   border-radius: 12px;
@@ -72,9 +72,6 @@ ol > li > ul > li > a {
   color: #813405;
 }
 
-/* slideshow----------------------------------------------------------------------------- */
-
-
 /* footer-------------------------------------------------------------------------------- */
 .footer {
   /* position: absolute; */
@@ -91,4 +88,32 @@ ol > li > ul > li > a {
 .footer > .Kontakt > p {
   padding: 0px;
   margin: 2px;
+}
+
+/* inputs sites */
+label {
+  padding:5px;
+  margin: 5px;
+}
+button {
+  background-color: #F9A03F;
+  padding: 5px 10px;
+  margin:10px;
+  border-radius: 12px;
+  color:#813405;
+  font-weight: bold;
+  width: 250px;
+}
+.adminOption {
+  float:left;
+  width: 100px;
+  height: 20px;
+  background-color: #F9A03F;
+  border-radius: 12px;
+  margin: 3px;
+  display: block;
+  text-decoration: none;
+  color: #813405;
+  padding: 0 5px;
+  text-align: center;
 }

@@ -11,20 +11,20 @@
             <img src="logo.png">
       <!-- Panel logowania -->
             <div class="LogIn">
-              <input type="text" placeholder="Nazwa użytkownika" name="username" required>  
-              <input type="password" placeholder="Hasło" name="password" required>
-              <button type="submit">Zaloguj</button>
+              <input class="loginUsername" type="text" placeholder="Username" name="username" required>  
+              <input class="loginPassword" type="password" placeholder="Password" name="password" required>
+              <button class="loginSubmit" type="submit">Log In</button>
             </div>
           </div>
       
       <!-- menu rozwijane -->
           <div>
             <ol>
-              <li><a href="file:///C:/Users/Natalka/Documents/pp/SQL/DanceSchool/main.html">Strona główna</a></li>
+              <li><a href="main.html">Main paige</a></li>
+              
+              <li><a href="instructors.html">Instructors</a></li>
       
-              <li><a href="C:\Users\Natalka\Documents\pp\SQL\DanceSchool\planZajex.html">Plan zajęć</a></li>
-      
-              <li><a href="C:\Users\Natalka\Documents\pp\SQL\DanceSchool\kursy.html">Kursy</a>
+              <li><a href="courses.html">Courses</a>
                 <!-- <ul>
                   <li><a href="#">link - 1</a></li>
                   <li><a href="#">link - 2</a></li>
@@ -32,9 +32,16 @@
                 </ul> -->
               </li>
       
-              <li><a href="#">Galeria</a></li>
+              <!-- <li><a href="#">Galeria</a></li> -->
             </ol>
           </div>
+          <label>Created at: <input type="date"></label>
+          <label>Updated at: <input type="date"></label>
+          <label>(fk) Genre ID: <input type="number"></label>
+          <label>(fk) Instructor ID: <input type="number"></label>
+          <button type="submit">Add</button>
+
+
 <!-- footer with contact data -->
           <div class="footer">
             <div class="Kontakt">
