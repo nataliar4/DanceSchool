@@ -11,16 +11,16 @@ const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(courseName)
-  console.log(price)
-  console.log(numberOfClasses)
-  console.log(startTime)
-  console.log(requirements)
-  console.log(roomName)
-  console.log(songTitle)
-  console.log(levelName)
-  console.log(danceGenreName)  
-  fetch("http://localhost:3000/course", {
+  console.log(courseName.value)
+  console.log(price.value)
+  console.log(numberOfClasses.value)
+  console.log(startTime.value)
+  console.log(requirements.value)
+  console.log(roomName.value)
+  console.log(songTitle.value)
+  console.log(levelName.value)
+  console.log(danceGenreName.value)  
+  fetch("http://localhost:3000/instructor/instructor/course", {
     method:"POST",
     mode:"cors",
     credentials:"include",

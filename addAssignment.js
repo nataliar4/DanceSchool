@@ -8,7 +8,7 @@ addButton.addEventListener("click", ()=>{
   console.log(instructorEmail.value)
   console.log(courseName.value)
   console.log(earnings.value)
-  fetch("http://localhost:3000/assignment", {
+  fetch("http://localhost:3000/instructor/assignment", {
     method:"POST",
     mode:"cors",
     credentials:"include",

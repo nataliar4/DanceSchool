@@ -1,10 +1,10 @@
-const danceName = document.querySelector("label.input")
+const levelName = document.querySelector("label.input")
 const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(danceName.value)
-  fetch("http://localhost:3000/admin/danceGenre", {
+  console.log(levelName.value)
+  fetch("http://localhost:3000/admin/level", {
     method:"POST",
     mode:"cors",
     credentials:"include",
@@ -12,9 +12,6 @@ addButton.addEventListener("click", ()=>{
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body:JSON.stringify({
-      name: danceName.value,
-    })
+    body:JSON.stringify({name: levelName.value})
   }).then(response => response.json()).then(data => console.log(data))
-  // loginSubmit.innerText="Log In"
 })

@@ -1,18 +1,16 @@
-const instructorEmail = document.querySelector(".instructorEmail")
+const email = document.querySelector(".email")
 const password = document.querySelector(".password")
-const instructorName = document.querySelector(".name")
+const participantName = document.querySelector(".participantName")
 const surname = document.querySelector(".surname")
-const isAdmin = document.querySelector(".admin")
 const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(instructorEmail.value)
-  console.log(password.value)  
-  console.log(instructorName.value)
+  console.log(email.value)
+  console.log(password.value)
+  console.log(participantName.value)
   console.log(surname.value)
-  console.log(isAdmin.checked)
-  fetch("http://localhost:3000/admin/instructor", {
+  fetch("http://localhost:3000/instructor/participant", {
     method:"POST",
     mode:"cors",
     credentials:"include",
@@ -21,12 +19,10 @@ addButton.addEventListener("click", ()=>{
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body:JSON.stringify({
-      email: instructorEmail.value,
+      email: email.value,
       password: password.value,
-      name: instructorName.value,
-      surname: surname.value,
-      isAdmin: isAdmin.checked
+      name: participantName.value,
+      surname: surname.value
     })
   }).then(response => response.json()).then(data => console.log(data))
-  // loginSubmit.innerText="Log In"
 })

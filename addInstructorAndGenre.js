@@ -4,9 +4,9 @@ const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(instructorEmail)
-  console.log(danceGenreName)  
-  fetch("http://localhost:3000/instructorAndGenre", {
+  console.log(instructorEmail.value)
+  console.log(danceGenreName.value)  
+  fetch("http://localhost:3000/admin/instructorAndGenre", {
     method:"POST",
     mode:"cors",
     credentials:"include",
