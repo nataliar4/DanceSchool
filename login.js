@@ -14,7 +14,7 @@ loginSubmit.addEventListener("click", ()=>{
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    // body:JSON.stringify({email:loginUsername.value, password:loginPassword.value})
+    body:JSON.stringify({email:loginUsername.value, password:loginPassword.value})
   }).then(response => response.json()).then(data => console.log(data))
   // loginSubmit.innerText="Log In"
 })
