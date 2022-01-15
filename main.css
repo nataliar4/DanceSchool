@@ -31,47 +31,26 @@ input {
   color: #813405;
 }
 /* menu ---------------------------------------------------------------------------------*/
-ol {
-  list-style-type: none;
-  font-size: 18px;
-  font-weight: bolder;
-  height: 3em;
-  line-height: 3em;
-  text-align: center;
-  margin: 5px auto;
-  position: relative;
-}
-ol > li {
-  float: left;
-  width: 23vw;
-  height: 3em;
-  background-color: #F9A03F;
-  border-radius: 12px;
+.menu {
+  height: 8vh;
   margin: 3px;
-  /* margin: 0 auto; */
+  display: flex;
+  /* align-content: center; */
+  justify-content: space-around;
 }
-ol > li > a {
-  display: block;
-  text-decoration: none;
-  color: #813405;
-  padding: 0 5px;
-}
-ol >li:hover >ul {
-  display: block;
-}
-ol > li > ul {
-  display: none;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-ol > li > ul > li {
+.menu > a {
   background-color: #F9A03F;
-}
-ol > li > ul > li > a {
-  color: #813405;
-}
+  padding: 1em 1.5em;
+  margin:10px;
+  border-radius: 12px;
+  color:#813405;
+  font-weight: bold;
+  text-align: center;
+  line-height: 10px;
+  width: 47vw;
+  text-decoration: none;
 
+}
 /* footer-------------------------------------------------------------------------------- */
 .footer {
   /* position: absolute; */
@@ -90,7 +69,7 @@ ol > li > ul > li > a {
   margin: 2px;
 }
 
-/* inputs sites */
+/* inputs sites -------------------------------------------------------------------------*/
 label {
   padding:5px;
   margin: 5px;
@@ -116,4 +95,12 @@ button {
   color: #813405;
   padding: 0 5px;
   text-align: center;
+}
+/* courses list---------------------------------------------------------------------------- */
+.courseNames {
+  margin: 5px;
+  padding: 5px;
+  color: #813405;
+  font-weight: 600;
+  border-bottom: 1px solid #813405;
 }
