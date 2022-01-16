@@ -1,17 +1,16 @@
 const courseButton = document.querySelector(".coursesList")
-const courseName = document.querySelector(".courseName")
+const courseName = document.querySelector(".coursesNames")
+const courseContainer = document.querySelector(".courseContainer")
 
 function addNode(txt) {
   var newParagraph = document.createElement("p");
   var text = document.createTextNode(txt);
   newParagraph.appendChild(text);
-  document.getElementById("first").appendChild(newParagraph);
-  newParagraph.className += "courseNames";
+  courseContainer.appendChild(newParagraph);
+  newParagraph.classList.add("coursesNames");
 }
-
-courseButton.addEventListener("click", async e => {
+async function loadCourses() {
   try {
-    e.preventDefault()
     const courseResponse = await fetch("http://localhost:3000/course", {
       method:"GET",
       mode:"cors",
@@ -22,14 +21,16 @@ courseButton.addEventListener("click", async e => {
       }
     });
     const jsonCourseResponse = await courseResponse.json();
-    for (var each in jsonCourseResponse) {
-      console.log(jsonCourseResponse[each]["name"]);
-      addNode(jsonCourseResponse[each]["name"]);
+    for (const response in jsonCourseResponse) {
+      console.log(jsonCourseResponse[response]["name"]);
+      addNode(jsonCourseResponse[response]["name"]);
     }
   } catch (err) {
     console.log(err);
   }
-})
+}
+loadCourses();  
+
 
 courseName.addEventListener("click", async e => {
   try {

@@ -30,6 +30,9 @@ input {
 ::placeholder{
   color: #813405;
 }
+.inactive {
+  display: none;
+}
 /* menu ---------------------------------------------------------------------------------*/
 .menu {
   height: 8vh;
@@ -97,10 +100,23 @@ button {
   text-align: center;
 }
 /* courses list---------------------------------------------------------------------------- */
-.courseNames {
+.coursesNames {
   margin: 5px;
   padding: 5px;
   color: #813405;
   font-weight: 600;
   border-bottom: 1px solid #813405;
+}
+/* instructors list ----------------------------------------------------------------------- */
+.instructorsNames {
+  margin: 5px;
+  padding: 5px;
+  color: #813405;
+  font-weight: 600;
+  border-top: 1px solid #813405;
+}
+.instructorsDances {
+  color: #813405;
+  padding: 5px 5px 5px 20px;
+  margin: 5px;
 }

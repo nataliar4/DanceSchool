@@ -10,18 +10,29 @@
       <!-- Logo from https://www.freelogodesign.org/ -->
             <img src="logo.png">
       <!-- Panel logowania -->
-            <div class="LogIn">
-              <input class="loginUsername" type="text" placeholder="Username" name="username" required>  
-              <input class="loginPassword" type="password" placeholder="Password" name="password" required>
-              <button class="loginSubmit" type="submit">Log In</button>
-            </div>
+          <div class="LogIn">
+            <input class="loginUsername" type="text" placeholder="Username" name="username" required>  
+            <input class="loginPassword" type="password" placeholder="Password" name="password" required>
+            <button class="loginSubmit">Log In</button>
           </div>
+          <div class="LogOut inactive">
+            <button class="logoutButton">Log out</button>
+          </div>
+    </div>
       
-<!-- menu -->
-<div>
-  <button class="mainPaige">Main paige</button>
-  <button class="coursesList">Courses</button>
-</div>
+          <!-- menu -->
+          <div class="menu">
+            <a class="mainPaige" href="main.html">Main paige</a>
+            <a class="instructorsList" href="instructors.html">Instructors</a>
+            <a class="coursesList" href="courses.html">Courses</a>
+          </div>
+          
+          <!-- list of instructors  -->
+          <p id="first">Instructors: </p>
+          
+          <div class="instructorsContainer">
+            
+          </div>
 
 <!-- footer with contact data -->
           <div class="footer">
@@ -33,5 +44,6 @@
             </div>
           </div>
           <script src="login.js"></script>
+          <script src="instructors.js"></script>
   </body>
 </html>
