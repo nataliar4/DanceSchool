@@ -16,8 +16,8 @@ async function loadCourses() {
     for (const response in jsonCourseResponse) {
       const newDiv = addDiv(coursesContainer);
       addParagraph(newDiv, jsonCourseResponse[response]);
-      addLink(newDiv, "Modify");
-      addLink(newDiv, "Delete");
+      addLink(newDiv, "Modify", "modifyElement");
+      addLink(newDiv, "Delete", "deleteElement");
     }
   } catch (err) {
     console.log(err);

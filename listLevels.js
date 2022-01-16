@@ -16,8 +16,8 @@ async function loadList() {
     for (const response in jsonSomeResponse) {
       const newDiv = addDiv(someContainer);
       addParagraph(newDiv, jsonSomeResponse[response]["name"]);
-      addLink(newDiv, "Modify");
-      addLink(newDiv, "Delete");
+      addLink(newDiv, "Modify", "modifyElement");
+      addLink(newDiv, "Delete", "deleteElement");
     }
   } catch (err) {
     console.log(err);

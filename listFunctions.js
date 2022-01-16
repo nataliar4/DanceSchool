@@ -12,10 +12,10 @@ function addParagraph(element, txt) {
   element.appendChild(newParagraph);
   newParagraph.classList.add("someDetails");
 }
-function addLink(element, txt) {
+function addLink(element, txt, className) {
   var newLink = document.createElement("a");
   var text = document.createTextNode(txt);
   newLink.appendChild(text);
   element.appendChild(newLink);
-  newLink.classList.add("modify_delete");
+  newLink.classList.add(className);
 }

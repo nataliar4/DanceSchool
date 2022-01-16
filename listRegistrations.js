@@ -17,8 +17,8 @@ async function loadList() {
       const newDiv = addDiv(someContainer);
       addParagraph(newDiv, jsonSomeResponse[response]["participant"]);
       addParagraph(newDiv, jsonSomeResponse[response]["course"]);
-      addLink(newDiv, "Modify");
-      addLink(newDiv, "Delete");
+      addLink(newDiv, "Modify", "modifyElement");
+      addLink(newDiv, "Delete", "deleteElement");
     }
   } catch (err) {
     console.log(err);

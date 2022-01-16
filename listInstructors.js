@@ -18,8 +18,8 @@ async function loadList() {
       addParagraph(newDiv, jsonSomeResponse[response]["name"]+" "+jsonSomeResponse[response]["surname"]);
       addParagraph(newDiv, jsonSomeResponse[response]["email"]);
       addParagraph(newDiv, ((jsonSomeResponse[response]["isAdmin"]) ? "Admin" : ""))
-      addLink(newDiv, "Modify");
-      addLink(newDiv, "Delete");
+      addLink(newDiv, "Modify", "modifyElement");
+      addLink(newDiv, "Delete", "deleteElement");
     }
   } catch (err) {
     console.log(err);

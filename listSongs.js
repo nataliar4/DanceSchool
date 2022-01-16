@@ -27,8 +27,8 @@ async function loadList() {
       addParagraph(newDiv, jsonSomeResponse[response]["title"]);
       addParagraph(newDiv, "Performer: "+jsonSomeResponse[response]["performer"]);
       addSource(newDiv, jsonSomeResponse[response]["source"]);
-      addLink(newDiv, "Modify");
-      addLink(newDiv, "Delete");
+      addLink(newDiv, "Modify", "modifyElement");
+      addLink(newDiv, "Delete", "deleteElement");
     }
   } catch (err) {
     console.log(err);
