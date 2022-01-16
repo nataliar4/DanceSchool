@@ -1,9 +1,14 @@
 const loginUsername = document.querySelector(".loginUsername")
 const loginPassword = document.querySelector(".loginPassword")
+
 const loginSubmit = document.querySelector(".loginSubmit")
 const logoutButton = document.querySelector(".logoutButton")
+
 const loginForm = document.querySelector(".LogIn")
 const logoutForm = document.querySelector(".LogOut")
+
+const instructorPanel = document.querySelector(".instructorPanel")
+const adminPanel = document.querySelector(".adminPanel")
 
 function parseCookies() {
   const result = {};
@@ -21,6 +26,17 @@ function displayLogin() {
     logoutForm.classList.remove("inactive");
   } else {
     loginForm.classList.remove("inactive");
+  }
+}
+
+function displayPanel() {
+  instructorPanel.classList.add("inactive");
+  adminPanel.classList.add("inactive");
+  const role = parseCookies().role;
+  if(role == "instructor") {
+    instructorPanel.classList.remove("inactive");
+  } else if (role == "admin") {
+    adminPanel.classList.remove("inactive");
   }
 }
 
@@ -42,6 +58,7 @@ loginSubmit.addEventListener("click", async (e)=>{
     });
     console.log(parseCookies());
     displayLogin();
+    displayPanel();
     const jsonLoginResponse = await loginResponse.json();
     console.log(jsonLoginResponse);
   } catch(err) {
@@ -61,6 +78,7 @@ logoutButton.addEventListener("click", async e => {
   })
   console.log(parseCookies());
   displayLogin();
+  displayPanel();
   const jsonLogoutResponse = await logoutResponse.json();
   console.log(jsonLogoutResponse);
 })
