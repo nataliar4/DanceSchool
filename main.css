@@ -123,3 +123,24 @@ button {
   padding: 5px 5px 5px 20px;
   margin: 5px;
 }
+ /* other lists----------------------------------------------------------------------------- */
+ .oneElement{
+   margin: 10px;
+   border-bottom: 1px solid #813405;
+ }
+ .someDetails {
+   padding: 5px;
+   margin: 5px;
+ }
+ .modify_delete {
+  width: 100px;
+  height: 22px;
+  background-color: #F9A03F;
+  border-radius: 12px;
+  margin: 3px;
+  display: block;
+  text-decoration: none;
+  color: #813405;
+  padding: 0 5px;
+  text-align: center;
+}
