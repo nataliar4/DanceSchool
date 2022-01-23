@@ -15,10 +15,11 @@ async function loadList() {
     console.log(jsonSomeResponse);
     for (const response in jsonSomeResponse) {
       const newDiv = addDiv(someContainer);
+      const email = jsonSomeResponse[response]["email"];
       addParagraph(newDiv, jsonSomeResponse[response]["name"]+" "+jsonSomeResponse[response]["surname"]);
-      addParagraph(newDiv, jsonSomeResponse[response]["email"]);
+      addParagraph(newDiv, email);
       addLink(newDiv, "Modify", "modifyElement");
-      addLink(newDiv, "Delete", "deleteElement");
+      addLink(newDiv, "Delete", "deleteElement", "http://localhost:3000/instructor/participant", {email});
     }
   } catch (err) {
     console.log(err);

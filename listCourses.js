@@ -1,6 +1,6 @@
 const coursesContainer = document.querySelector(".someContainer")
 
-async function loadCourses() {
+async function loadList() {
   try {
     const courseResponse = await fetch("http://localhost:3000/instructor/course", {
       method:"GET",
@@ -15,14 +15,15 @@ async function loadCourses() {
     console.log(jsonCourseResponse);
     for (const response in jsonCourseResponse) {
       const newDiv = addDiv(coursesContainer);
-      addParagraph(newDiv, jsonCourseResponse[response]);
+      const name = jsonCourseResponse[response];
+      addParagraph(newDiv, name);
       addLink(newDiv, "Modify", "modifyElement");
-      addLink(newDiv, "Delete", "deleteElement");
+      addLink(newDiv, "Delete", "deleteElement","http://localhost:3000/instructor/course", {name});
     }
   } catch (err) {
     console.log(err);
   }
 }
-loadCourses();  
+loadList();  
 
 

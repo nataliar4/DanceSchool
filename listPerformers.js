@@ -15,10 +15,11 @@ async function loadList() {
     console.log(jsonSomeResponse);
     for (const response in jsonSomeResponse) {
       const newDiv = addDiv(someContainer);
-      addParagraph(newDiv, jsonSomeResponse[response]["name"]);
+      const name = jsonSomeResponse[response]["name"]
+      addParagraph(newDiv, name);
       addParagraph(newDiv, jsonSomeResponse[response]["musicGenre"]);
       addLink(newDiv, "Modify", "modifyElement");
-      addLink(newDiv, "Delete", "deleteElement");
+      addLink(newDiv, "Delete", "deleteElement", "http://localhost:3000/admin/performer/"+name, {name});
     }
   } catch (err) {
     console.log(err);

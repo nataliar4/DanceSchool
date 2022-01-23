@@ -1,6 +1,6 @@
 const assignmentsContainer = document.querySelector(".someContainer")
 
-async function loadAssignments() {
+async function loadList() {
   try {
     const assignmentResponse = await fetch("http://localhost:3000/instructor/assignment", {
       method:"GET",
@@ -15,35 +15,20 @@ async function loadAssignments() {
     console.log(jsonAssignmentResponse);
     for (const response in jsonAssignmentResponse) {
       const newDiv = addDiv(assignmentsContainer);
-      addParagraph(newDiv, jsonAssignmentResponse[response]["course"]);
-      addParagraph(newDiv, "instructor: "+jsonAssignmentResponse[response]["instructor"]);
+      const instructorEmail = jsonAssignmentResponse[response].instructor;
+      const courseName = jsonAssignmentResponse[response].course;
+      addParagraph(newDiv, courseName);
+      addParagraph(newDiv, "instructor: "+instructorEmail);
       addLink(newDiv, "Modify", "modifyElement");
-      addLink(newDiv, "Delete", "deleteElement");
+      addLink(newDiv, "Delete", "deleteElement", "http://localhost:3000/instructor/assignment", {instructorEmail, courseName});
     }
   } catch (err) {
     console.log(err);
   }
 }
-loadAssignments();  
+loadList();  
 
-const deleteButton = document.querySelector(".deleteElement");
-deleteButton.addEventListener("click", async () => {
-  try {
-    const assignmentResponse = await fetch("http://localhost:3000/instructor/assignment", {
-      method:"GET",
-      mode:"cors",
-      credentials:"include",
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      }
-    });
-    const jsonAssignmentResponse = await assignmentResponse.json();
-    console.log(jsonAssignmentResponse);
-  } catch (err) {
-    console.log(err);
-  }
-})
+
 
 
 
