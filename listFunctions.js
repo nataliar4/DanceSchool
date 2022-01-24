@@ -50,7 +50,61 @@ function addLink(element, txt, className, endpoint, reqData) {
       } catch (err) {
         console.log(err);
       }
+    } else if (newLink.innerHTML == "Modify") {
+      console.log(reqData);
+      try {
+        const assignmentResponse = await fetch(endpoint, {
+          method:"POST",
+          mode:"cors",
+          credentials:"include",
+          headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body:JSON.stringify(reqData)
+        });
+        const jsonAssignmentResponse = await assignmentResponse.json();
+        console.log(jsonAssignmentResponse);
+      } catch (err) {
+        console.log(err);
+      }
     }
   })
 }
 
+function addSource(element, url) {
+  var newLink = document.createElement("a");
+  var text = document.createTextNode("Source");
+  newLink.appendChild(text);
+  element.appendChild(newLink);
+  newLink.href = url;
+  newLink.classList.add("someDetails");
+}
+
+function addLabel(container,text) {
+  var newLabel = document.createElement("label");
+  var text = document.createTextNode(text);
+  newLabel.appendChild(text);
+  container.appendChild(newLabel);
+}
+
+function addInput(container, className, inputType, holder,index, step) {
+  var newInput = document.createElement("input");
+  newInput.className = (className);
+  newInput.type = inputType;
+  newInput.value = holder;
+  newInput.step = step;
+  container.appendChild(newInput);
+  newInput.id = `${className}-input-${index}`
+
+  return newInput;
+}
+function addLinkCallback(element, txt, className, callback) {
+  var newLink = document.createElement("button");
+  var text = document.createTextNode(txt);
+  newLink.appendChild(text);
+  element.appendChild(newLink);
+  newLink.classList.add(className);
+
+  newLink.addEventListener("click", callback);
+}

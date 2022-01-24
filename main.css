@@ -144,3 +144,13 @@ button {
   padding: 0 5px;
   text-align: center;
 }
+/* participant panel----------------------------------------------------------- */
+.courseName {
+  margin: 5px;
+  padding: 5px;
+  color: #813405;
+  font-weight: 600;
+}
+.coursesDetails {
+  margin: 7px;
+}

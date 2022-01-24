@@ -17,6 +17,8 @@ async function loadList() {
       const newDiv = addDiv(coursesContainer);
       const name = jsonCourseResponse[response];
       addParagraph(newDiv, name);
+      addLabel(newDiv, "Name: ");
+      addInput(newDiv, "courseName", "text", name);
       addLink(newDiv, "Modify", "modifyElement");
       addLink(newDiv, "Delete", "deleteElement","http://localhost:3000/instructor/course", {name});
     }
