@@ -71,7 +71,7 @@ async function loadList() {
                       name: instName.value, surname: instSurname.value})
                   });
                   const jsonAssignmentResponse = await assignmentResponse.json();
-                  console.log(jsonAssignmentResponse);
+                  window.alert(jsonAssignmentResponse.message);
                   clearDiv();
                   loadList();
                 } catch (err) {

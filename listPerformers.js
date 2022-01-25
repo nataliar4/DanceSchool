@@ -39,7 +39,7 @@ async function loadList() {
               body:JSON.stringify({name: perfName.value, musicGenre: genreName.value})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            console.log(jsonAssignmentResponse);
+            window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

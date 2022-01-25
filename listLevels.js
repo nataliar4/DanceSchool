@@ -34,7 +34,7 @@ async function loadList() {
               body:JSON.stringify({name: lvlName.value})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            console.log(jsonAssignmentResponse);
+            window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

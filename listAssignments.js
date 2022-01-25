@@ -42,7 +42,7 @@ async function loadList() {
                 earnings: earnings, instructorEmailNew: instructorInput.value, courseNameNew: courseName})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            console.log(jsonAssignmentResponse);
+            window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

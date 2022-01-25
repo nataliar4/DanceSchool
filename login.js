@@ -50,7 +50,7 @@ loginSubmit.addEventListener("click", async (e)=>{
     e.preventDefault()
     // console.log(loginUsername.value)
     // console.log(loginPassword.value)
-    console.log(document.cookie);
+    // console.log(document.cookie);
     const loginResponse = await fetch("http://localhost:3000/login/in", {
       method:"POST",
       mode:"cors",
@@ -61,11 +61,23 @@ loginSubmit.addEventListener("click", async (e)=>{
       },
       body:JSON.stringify({email:loginUsername.value, password:loginPassword.value})
     });
-    console.log(parseCookies());
+    // console.log(parseCookies());
     displayLogin();
     displayPanel();
     const jsonLoginResponse = await loginResponse.json();
-    console.log(jsonLoginResponse);
+    if (jsonLoginResponse.message != 'Logged in') {
+      const lgResponse = await fetch("http://localhost:3000/login/out", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      window.alert("Login failed");
+      displayLogin();
+      displayPanel();
+    }
   } catch(err) {
     console.log(err);
   }
@@ -83,9 +95,9 @@ logoutButton.addEventListener("click", async e => {
   })
   loginUsername.value="";
   loginPassword.value="";
-  console.log(parseCookies());
+  // console.log(parseCookies());
   displayLogin();
   displayPanel();
   const jsonLogoutResponse = await logoutResponse.json();
-  console.log(jsonLogoutResponse);
+  // console.log(jsonLogoutResponse);
 })

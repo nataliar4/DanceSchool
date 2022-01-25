@@ -26,6 +26,6 @@ addButton.addEventListener("click", ()=>{
         surname: surname.value,
         isAdmin: isAdmin.checked
       })
-    }).then(response => response.json()).then(data => console.log(data))
+    }).then(response => response.json()).then(data => window.alert(data.message))
   }
 })

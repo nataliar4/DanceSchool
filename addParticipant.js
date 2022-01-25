@@ -26,6 +26,6 @@ addButton.addEventListener("click", ()=>{
         name: participantName.value,
         surname: surname.value
       })
-    }).then(response => response.json()).then(data => console.log(data))
+    }).then(response => response.json()).then(data => window.alert(data.message))
   }
 })

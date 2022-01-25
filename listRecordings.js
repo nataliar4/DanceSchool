@@ -20,17 +20,6 @@ async function loadList() {
       const source = jsonSomeResponse[response]["source"];
       const course = jsonSomeResponse[response]["course"];
 
-      // const rResponse = await fetch("http://localhost:3000/instructor/recording/form/edit", {
-      //   method:"POST",
-      //   mode:"cors",
-      //   credentials:"include",
-      //   headers: {
-      //     'Content-Type': 'application/json'
-      //     // 'Content-Type': 'application/x-www-form-urlencoded',
-      //   },
-      //   body: JSON.stringify({byName: name, courseName: course})
-      // });
-
       addParagraph(newDiv, name);
       addSource(newDiv, source);
       addParagraph(newDiv, course);
@@ -59,7 +48,7 @@ async function loadList() {
                 source: sourceIn.value, courseName: courseIn.value})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            console.log(jsonAssignmentResponse);
+            window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

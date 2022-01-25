@@ -42,27 +42,9 @@ function addLink(element, txt, className, endpoint, reqData) {
           body:JSON.stringify(reqData)
         });
         const jsonAssignmentResponse = await assignmentResponse.json();
-        console.log(jsonAssignmentResponse);
+        window.alert(jsonAssignmentResponse.message);
         clearDiv();
         loadList();
-      } catch (err) {
-        console.log(err);
-      }
-    } else if (newLink.innerHTML == "Modify") {
-      console.log(reqData);
-      try {
-        const assignmentResponse = await fetch(endpoint, {
-          method:"POST",
-          mode:"cors",
-          credentials:"include",
-          headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body:JSON.stringify(reqData)
-        });
-        const jsonAssignmentResponse = await assignmentResponse.json();
-        console.log(jsonAssignmentResponse);
       } catch (err) {
         console.log(err);
       }

@@ -47,7 +47,7 @@ async function loadList() {
                 source: sourceIn.value, performerName: perfName.value})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            console.log(jsonAssignmentResponse);
+            window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

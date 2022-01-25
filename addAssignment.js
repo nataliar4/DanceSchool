@@ -17,6 +17,6 @@ addButton.addEventListener("click", ()=>{
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body:JSON.stringify({instructorEmail:instructorEmail.value, courseName: courseName.value, earnings: earnings.value})
-  }).then(response => response.json()).then(data => console.log(data))
-  // loginSubmit.innerText="Log In"
+  }).then(response => response.json()).then(data => window.alert(data.message))
+  
 })

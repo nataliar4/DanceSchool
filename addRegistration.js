@@ -21,6 +21,6 @@ addButton.addEventListener("click", ()=>{
       courseName: courseName.value,
       attendance: attendance.value
     })
-  }).then(response => response.json()).then(data => console.log(data))
+  }).then(response => response.json()).then(data => window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })

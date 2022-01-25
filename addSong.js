@@ -21,6 +21,6 @@ addButton.addEventListener("click", ()=>{
       capacity: capacity.value,
       performerName: performer
     })
-  }).then(response => response.json()).then(data => console.log(data))
+  }).then(response => response.json()).then(data => window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })

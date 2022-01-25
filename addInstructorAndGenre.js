@@ -18,6 +18,6 @@ addButton.addEventListener("click", ()=>{
       instructorEmail: instructorEmail.value,
       danceGenreName: danceGenreName.value
     })
-  }).then(response => response.json()).then(data => console.log(data))
+  }).then(response => response.json()).then(data => window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })

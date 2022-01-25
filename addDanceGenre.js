@@ -15,6 +15,6 @@ addButton.addEventListener("click", ()=>{
     body:JSON.stringify({
       name: danceName.value,
     })
-  }).then(response => response.json()).then(data => console.log(data))
+  }).then(response => response.json()).then(data => window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })

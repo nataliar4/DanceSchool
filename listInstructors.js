@@ -58,7 +58,6 @@ async function loadList() {
                     body:JSON.stringify({email: email, password: pass1.value})
                   });
                   const jsonCheckResponse = await checkResponse.json();
-                  console.log(jsonCheckResponse);
 
 
                   if (jsonCheckResponse.message == 'Password correct') {
@@ -76,7 +75,7 @@ async function loadList() {
                             name: instName.value, surname: instSurname.value, isAdmin: isAdmin.checked})
                         });
                         const jsonAssignmentResponse = await assignmentResponse.json();
-                        console.log(jsonAssignmentResponse);
+                        window.alert(jsonAssignmentResponse.message);
                         clearDiv();
                         loadList();
                       } catch (err) {

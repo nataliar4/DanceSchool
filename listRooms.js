@@ -40,7 +40,7 @@ async function loadList() {
               body:JSON.stringify({name: rmIn.value, capacity: capIn.value})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            console.log(jsonAssignmentResponse);
+            window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

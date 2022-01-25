@@ -13,5 +13,5 @@ addButton.addEventListener("click", ()=>{
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body:JSON.stringify({name: levelName.value})
-  }).then(response => response.json()).then(data => console.log(data))
+  }).then(response => response.json()).then(data => window.alert(data.message))
 })
