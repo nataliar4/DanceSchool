@@ -42,7 +42,7 @@ function addLink(element, txt, className, endpoint, reqData) {
           body:JSON.stringify(reqData)
         });
         const jsonAssignmentResponse = await assignmentResponse.json();
-        window.alert(jsonAssignmentResponse.message);
+        jsonAssignmentResponse.message == undefined ? console.log(): window.alert(jsonAssignmentResponse.message);
         clearDiv();
         loadList();
       } catch (err) {

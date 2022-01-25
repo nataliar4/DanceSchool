@@ -34,7 +34,7 @@ async function loadList() {
               body:JSON.stringify({name: lvlName.value})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
-            window.alert(jsonAssignmentResponse.message);
+            jsonAssignmentResponse.message == undefined ? console.log(): window.alert(jsonAssignmentResponse.message);
             clearDiv();
             loadList();
           } catch (err) {

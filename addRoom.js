@@ -18,6 +18,6 @@ addButton.addEventListener("click", ()=>{
       name: roomName.value, 
       capacity: capacity.value
     })
-  }).then(response => response.json()).then(data => window.alert(data.message))
+  }).then(response => response.json()).then(data => data.message == undefined ? console.log(): window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })
