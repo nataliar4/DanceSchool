@@ -62,8 +62,8 @@ async function loadList() {
 
 
       addLinkCallback(newDiv, "Modify", "modifyElement", async () => {
-        // const courseInput = document.querySelector(`#courseName-input-${response}`);
-        // console.log(courseInput)
+        const courseInput = document.querySelector(`#courseName-input-${response}`);
+        console.log(courseInput)
         const priceInput = document.querySelector(`#price-input-${response}`);
         const numClassesInput = document.querySelector(`#numberOfClasses-input-${response}`);
         const startInput = document.querySelector(`#startTime-input-${response}`);
@@ -82,7 +82,7 @@ async function loadList() {
                 'Content-Type': 'application/json'
                 // 'Content-Type': 'application/x-www-form-urlencoded',
               },
-              body:JSON.stringify({byName: name, name: name, price: priceInput.value,
+              body:JSON.stringify({byName: name, name: courseInput.value, price: priceInput.value,
                 numberClasses: numClassesInput.value, startTime: startInput.value, 
                 requirements: requirementsInput.value, roomName: roomInput.value, 
                 songTitle: songInput.value, levelName: levelInput.value, danceGenreName: genreInput.value})

@@ -1,5 +1,5 @@
 const performerName = document.querySelector(".performerName")
-const musicGenreName = document.querySelector(".musiGenreName")
+const musicGenreName = document.querySelector(".musicGenreName")
 const addButton = document.querySelector(".addButton")
 
 
@@ -15,6 +15,6 @@ addButton.addEventListener("click", ()=>{
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
     body:JSON.stringify({name:performerName.value, musicGenre: musicGenreName.value})
-  }).then(response => response.json()).then(data => window.alert(data.message))
+  }).then(response => response.json()).then(data => data.message == undefined ? console.log(): window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })

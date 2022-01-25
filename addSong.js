@@ -16,11 +16,7 @@ addButton.addEventListener("click", ()=>{
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body:JSON.stringify({
-      title: title.value, 
-      capacity: capacity.value,
-      performerName: performer
-    })
-  }).then(response => response.json()).then(data => window.alert(data.message))
+    body:JSON.stringify({title: title.value, source: source.value, performerName: performer.value})
+  }).then(response => response.json()).then(data => data.message == undefined ? console.log(): window.alert(data.message))
   // loginSubmit.innerText="Log In"
 })
