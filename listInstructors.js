@@ -60,6 +60,8 @@ async function loadList() {
                   });
                   const jsonAssignmentResponse = await assignmentResponse.json();
                   console.log(jsonAssignmentResponse);
+                  clearDiv();
+                  loadList();
                 } catch (err) {
                   console.log(err);
                 }
