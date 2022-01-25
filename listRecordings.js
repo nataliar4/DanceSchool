@@ -15,7 +15,7 @@ async function loadList() {
     console.log(jsonSomeResponse);
     for (const response in jsonSomeResponse) {
       const newDiv = addDiv(someContainer);
-      const recId = jsonSomeResponse.recordingId;
+      const recId = jsonSomeResponse[response]["recordingId"];
       const name = jsonSomeResponse[response]["name"];
       const source = jsonSomeResponse[response]["source"];
       const course = jsonSomeResponse[response]["course"];
