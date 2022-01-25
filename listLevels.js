@@ -17,7 +17,31 @@ async function loadList() {
       const newDiv = addDiv(someContainer);
       const name = jsonSomeResponse[response]["name"]
       addParagraph(newDiv, name);
-      addLink(newDiv, "Modify", "modifyElement");
+      addLabel(newDiv, "Name: ");
+      addInput(newDiv, "levelName", "text", name, response);
+      addLinkCallback(newDiv, "Modify", "modifyElement", async () => {
+        const lvlName = document.querySelector(`#levelName-input-${response}`);
+
+          try {
+            const assignmentResponse = await fetch("http://localhost:3000/admin/level/"+name, {
+              method:"PUT",
+              mode:"cors",
+              credentials:"include",
+              headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+              },
+              body:JSON.stringify({name: lvlName.value})
+            });
+            const jsonAssignmentResponse = await assignmentResponse.json();
+            console.log(jsonAssignmentResponse);
+            clearDiv();
+            loadList();
+          } catch (err) {
+            console.log(err);
+          }
+        
+      });
       addLink(newDiv, "Delete", "deleteElement", "http://localhost:3000/admin/level/"+name, {name});
     }
   } catch (err) {

@@ -25,8 +25,6 @@ function addLink(element, txt, className, endpoint, reqData) {
   element.appendChild(newLink);
   newLink.classList.add(className);
 
-
-
   
   newLink.addEventListener("click", async () => {
     console.log(newLink.innerHTML);
@@ -94,6 +92,17 @@ function addInput(container, className, inputType, holder,index, step) {
   newInput.type = inputType;
   newInput.value = holder;
   newInput.step = step;
+  container.appendChild(newInput);
+  newInput.id = `${className}-input-${index}`
+
+  return newInput;
+}
+function addCheckbox(container, className, inputType, holder,index, step) {
+  var newInput = document.createElement("input");
+  newInput.className = (className);
+  newInput.type = inputType;
+  newInput.step = step;
+  newInput.checked = holder;
   container.appendChild(newInput);
   newInput.id = `${className}-input-${index}`
 

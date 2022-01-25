@@ -19,7 +19,6 @@ async function loadList() {
       const danceGenreName = jsonSomeResponse[response]["danceGenre"];
       addParagraph(newDiv, "instructor: "+instructorEmail); 
       addParagraph(newDiv, danceGenreName);
-      addLink(newDiv, "Modify", "modifyElement");
       addLink(newDiv, "Delete", "deleteElement", "http://localhost:3000/admin/instructorAndGenre", {instructorEmail, danceGenreName});
     }
   } catch (err) {
