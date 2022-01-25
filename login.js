@@ -23,7 +23,7 @@ function parseCookies() {
 function displayLogin() {
   loginForm.classList.add("inactive");
   logoutForm.classList.add("inactive");
-  if(parseCookies().userId) {
+  if(parseCookies().role != "guest") {
     logoutForm.classList.remove("inactive");
   } else {
     loginForm.classList.remove("inactive");
