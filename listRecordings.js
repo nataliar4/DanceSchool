@@ -47,7 +47,7 @@ async function loadList() {
         const courseIn = document.querySelector(`#course-input-${response}`);
 
           try {
-            const assignmentResponse = await fetch("http://localhost:3000/instructor/recording/", {
+            const assignmentResponse = await fetch("http://localhost:3000/instructor/recording", {
               method:"PUT",
               mode:"cors",
               credentials:"include",
