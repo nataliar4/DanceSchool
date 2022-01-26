@@ -99,3 +99,18 @@ function addLinkCallback(element, txt, className, callback) {
 
   newLink.addEventListener("click", callback);
 }
+function addName(container, txt) {
+  var newParagraph = document.createElement("p");
+  var text = document.createTextNode(txt);
+  newParagraph.appendChild(text);
+  container.appendChild(newParagraph);
+  newParagraph.classList.add("coursesNames");
+}
+
+function addDetails(container, txt) {
+  var newParagraph = document.createElement("p");
+  var text = document.createTextNode(txt);
+  newParagraph.appendChild(text);
+  container.appendChild(newParagraph);
+  newParagraph.classList.add("coursesDetails");
+}

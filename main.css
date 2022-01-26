@@ -154,3 +154,14 @@ button {
 .coursesDetails {
   margin: 7px;
 }
+
+
+/* searching------------------------------------------------------------------- */
+.searching {
+  display: flex;
+  justify-content: center;
+}
+.find {
+  width: 60vw;
+  margin: 15px;
+}
