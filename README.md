@@ -1,5 +1,4 @@
 # DanceSchool
-Databases project
 Po pobraniu tego repozytorium oraz https://github.com/jedrzejSmok/projektZBD do jednego folderu o strukturze:  
 ./DanceSchool  
 ./projektZBD  
