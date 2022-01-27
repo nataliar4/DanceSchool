@@ -8,8 +8,6 @@ const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(password.value)
-  console.log(password2.value)
   if (password.value == password2.value) {
     fetch("http://localhost:3000/admin/instructor", {
       method:"POST",
@@ -26,6 +24,13 @@ addButton.addEventListener("click", ()=>{
         surname: surname.value,
         isAdmin: isAdmin.checked
       })
-    }).then(response => response.json()).then(data => data.message == undefined ? console.log(): window.alert(data.message))
+    }).then(response => response.json()).then(data => { 
+      if (data.message != undefined) {
+        if (data.message != "blad serwera") {
+          window.alert(data.message);
+        } else {
+          window.alert("Wprowadzono niepoprawne dane")
+        }
+      }})
   }
 })

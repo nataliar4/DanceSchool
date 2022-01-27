@@ -75,7 +75,14 @@ async function loadList() {
                             name: instName.value, surname: instSurname.value, isAdmin: isAdmin.checked})
                         });
                         const jsonAssignmentResponse = await assignmentResponse.json();
-                        jsonAssignmentResponse.message == undefined ? console.log(): window.alert(jsonAssignmentResponse.message);
+                        
+                          if (jsonAssignmentResponse.message != undefined) {
+                            if (jsonAssignmentResponse.message != "blad serwera") {
+                              window.alert(jsonAssignmentResponse.message);
+                            } else {
+                              window.alert("Wprowadzono niepoprawne dane")
+                            }
+                          }
                         clearDiv();
                         loadList();
                       } catch (err) {

@@ -5,9 +5,6 @@ const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(instructorEmail.value)
-  console.log(courseName.value)
-  console.log(earnings.value)
   fetch("http://localhost:3000/instructor/assignment", {
     method:"POST",
     mode:"cors",
@@ -16,7 +13,14 @@ addButton.addEventListener("click", ()=>{
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body:JSON.stringify({instructorEmail:instructorEmail.value, courseName: courseName.value, earnings: earnings.value})
-  }).then(response => response.json()).then(data => data.message == undefined ? console.log(data): window.alert(data.message))
+    body:JSON.stringify({instructorEmail:instructorEmail.value, courseName: courseName.value, earnings: earnings.value >= 0 ? earnings.value : 0})
+  }).then(response => response.json()).then(data => { 
+    if (data.message != undefined) {
+      if (data.message != "blad serwera") {
+        window.alert(data.message);
+      } else {
+        window.alert("Wprowadzono niepoprawne dane")
+      }
+    }})
   
 })

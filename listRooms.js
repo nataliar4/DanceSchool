@@ -26,7 +26,7 @@ async function loadList() {
 
       addLinkCallback(newDiv, "Modify", "modifyElement", async () => {
         const rmIn = document.querySelector(`#rmName-input-${response}`);
-        const capIn = document.querySelector(`#capac-input-${response}`);
+        const capIn = document.querySelector(`#capac-input-${response}`).value >= 0 ? document.querySelector(`#capac-input-${response}`) : cap;
 
           try {
             const assignmentResponse = await fetch("http://localhost:3000/admin/room/"+name, {

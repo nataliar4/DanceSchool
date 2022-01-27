@@ -27,7 +27,7 @@ async function loadList() {
       
       addLinkCallback(newDiv, "Modify", "modifyElement", async () => {
         const instructorInput = document.querySelector(`#instructorEmail-input-${response}`);
-        const courseInput = document.querySelector(`#courseName-input-${response}`);
+        const earningsInput = document.querySelector(`#earnings-input-${response}`).value >= 0 ? document.querySelector(`#earnings-input-${response}`) : earnings;
 
           try {
             const assignmentResponse = await fetch("http://localhost:3000/instructor/assignment", {
@@ -39,7 +39,7 @@ async function loadList() {
                 // 'Content-Type': 'application/x-www-form-urlencoded',
               },
               body:JSON.stringify({instructorEmail: instructorEmail, courseName: courseName, 
-                earnings: earnings, instructorEmailNew: instructorInput.value, courseNameNew: courseName})
+                earnings: earningsInput.value, instructorEmailNew: instructorInput.value, courseNameNew: courseName})
             });
             const jsonAssignmentResponse = await assignmentResponse.json();
             jsonAssignmentResponse.message == undefined ? console.log(): window.alert(jsonAssignmentResponse.message);

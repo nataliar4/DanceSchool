@@ -5,9 +5,6 @@ const addButton = document.querySelector(".addButton")
 
 
 addButton.addEventListener("click", ()=>{
-  console.log(email.value)
-  console.log(courseName.value)
-  console.log(attendance.value)
   fetch("http://localhost:3000/instructor/registration", {
     method:"POST",
     mode:"cors",
@@ -21,6 +18,12 @@ addButton.addEventListener("click", ()=>{
       courseName: courseName.value,
       attendance: attendance.value
     })
-  }).then(response => response.json()).then(data => data.message == undefined ? console.log(): window.alert(data.message))
-  // loginSubmit.innerText="Log In"
+  }).then(response => response.json()).then(data => { 
+    if (data.message != undefined) {
+      if (data.message != "blad serwera") {
+        window.alert(data.message);
+      } else {
+        window.alert("Wprowadzono niepoprawne dane")
+      }
+    }})
 })

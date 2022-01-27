@@ -64,15 +64,21 @@ async function loadList() {
       addLinkCallback(newDiv, "Modify", "modifyElement", async () => {
         const courseInput = document.querySelector(`#courseName-input-${response}`);
         console.log(courseInput)
-        const priceInput = document.querySelector(`#price-input-${response}`);
-        const numClassesInput = document.querySelector(`#numberOfClasses-input-${response}`);
+        const priceInput = document.querySelector(`#price-input-${response}`).value >= 0 ? document.querySelector(`#price-input-${response}`) : jsonCResponse.price;
+        const numClassesInput = document.querySelector(`#numberOfClasses-input-${response}`).value >= 0 ? document.querySelector(`#numberOfClasses-input-${response}`) : jsonCResponse.numberClasses;
         const startInput = document.querySelector(`#startTime-input-${response}`);
         const requirementsInput = document.querySelector(`#requirements-input-${response}`);
         const roomInput = document.querySelector(`#roomName-input-${response}`);
         const songInput = document.querySelector(`#songTitle-input-${response}`);
         const levelInput = document.querySelector(`#levelName-input-${response}`);
         const genreInput = document.querySelector(`#danceGenreName-input-${response}`);
-        console.log(priceInput);
+
+        
+        if (startInput.value == null) {
+          startInput.value == jsonCResponse.startTime;
+        } 
+        
+        console.log(startInput.value);
           try {
             const assignmentResponse = await fetch("http://localhost:3000/instructor/course", {
               method:"PUT",
